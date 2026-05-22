@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rotiseria App</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<header class="topbar">
+		<div>
+			<p class="eyebrow">Laboratorio de Software</p>
+			<h1>Rotiseria App</h1>
+		</div>
+		<nav>
+			<a href="#productos">Productos</a>
+			<a href="#clientes">Clientes</a>
+			<a href="#pedidos">Pedidos</a>
+			<a href="/h2-console" target="_blank">H2</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="summary">
+			<div>
+				<span id="total-productos">0</span>
+				<p>Productos</p>
+			</div>
+			<div>
+				<span id="total-clientes">0</span>
+				<p>Clientes</p>
+			</div>
+			<div>
+				<span id="total-pedidos">0</span>
+				<p>Pedidos</p>
+			</div>
+		</section>
+
+		<section id="productos" class="section-grid">
+			<div>
+				<h2>Productos</h2>
+				<p class="muted">Carga inicial del menu de la rotiseria.</p>
+				<form id="producto-form" class="form-card">
+					<label>
+						Nombre
+						<input name="nombre" type="text" placeholder="Empanada de carne" required>
+					</label>
+					<label>
+						Descripcion
+						<input name="descripcion" type="text" placeholder="Empanada tradicional al horno" required>
+					</label>
+					<label>
+						Precio
+						<input name="precio" type="number" min="0" step="0.01" placeholder="1200" required>
+					</label>
+					<label class="checkbox-line">
+						<input name="disponible" type="checkbox" checked>
+						Disponible
+					</label>
+					<button type="submit">Guardar producto</button>
+				</form>
+			</div>
+			<div class="table-panel">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Precio</th>
+							<th>Estado</th>
+						</tr>
+					</thead>
+					<tbody id="productos-tabla"></tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id="clientes" class="section-grid">
+			<div>
+				<h2>Clientes</h2>
+				<p class="muted">Registro simple para asociar pedidos.</p>
+				<form id="cliente-form" class="form-card">
+					<label>
+						Nombre
+						<input name="nombre" type="text" placeholder="Juan Perez" required>
+					</label>
+					<label>
+						Telefono
+						<input name="telefono" type="text" placeholder="1122334455" required>
+					</label>
+					<label class="checkbox-line">
+						<input name="frecuente" type="checkbox">
+						Cliente frecuente
+					</label>
+					<button type="submit">Guardar cliente</button>
+				</form>
+			</div>
+			<div class="table-panel">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Telefono</th>
+							<th>Tipo</th>
+						</tr>
+					</thead>
+					<tbody id="clientes-tabla"></tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id="pedidos" class="section-full">
+			<h2>Pedidos</h2>
+			<p class="muted">En esta primera version solo se listan. La creacion completa queda para el siguiente avance.</p>
+			<div class="table-panel">
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Cliente</th>
+							<th>Estado</th>
+							<th>Items</th>
+						</tr>
+					</thead>
+					<tbody id="pedidos-tabla"></tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+
+	<script src="/app.js"></script>
+</body>
+</html>
+
